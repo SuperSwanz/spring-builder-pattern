@@ -1,0 +1,60 @@
+buildscript {
+	ext {
+		springBootVersion 			=	'1.5.3.RELEASE'
+		sourceJavaVersion			=	'1.8'
+		targetJavaVersion			=	'1.8'
+		gradleVersion				=	'3.5'
+		commonsLangVersion			=	'3.5'
+	}
+	repositories {
+		jcenter()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+def defaultEncoding = 'UTF-8'
+[compileJava, compileTestJava]*.options*.encoding = defaultEncoding
+
+jar {
+	baseName = 'spring-builder-pattern'
+	version = '0.0.1'
+}
+
+compileJava {
+	targetCompatibility = sourceJavaVersion
+	sourceCompatibility = targetJavaVersion
+}
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+	compile	"org.springframework.boot:spring-boot-starter-web",
+			"org.springframework.boot:spring-boot-starter-actuator",
+			"org.springframework.boot:spring-boot-starter-data-jpa",
+			"org.apache.commons:commons-lang3:${commonsLangVersion}"
+			
+	runtime	"org.springframework.boot:spring-boot-devtools",
+			"com.h2database:h2"
+			
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = gradleVersion
+}
+
+task "forceTest" {
+    dependsOn "cleanTest", "test"
+}
+
+task "fullBuild" {
+    dependsOn "cleanTest", "test", "check", "build"
+}
