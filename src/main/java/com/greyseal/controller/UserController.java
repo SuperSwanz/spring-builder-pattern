@@ -43,7 +43,7 @@ public class UserController extends BaseController<Long, Serializable> {
 	@RequestMapping(value = "/get/{email:.+}", method = RequestMethod.GET)
 	public ResponseEntity<ResponseBuilder<UserBuilder>> get(@PathVariable("email") String email) {
 		User user = userService.findByEmail(email)
-				.orElseThrow(() -> new GreyException(HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND, "User not found: " + email));
+							   .orElseThrow(() -> new GreyException(HttpStatus.NOT_FOUND.value(), HttpStatus.NOT_FOUND, "User not found: " + email));
 		ResponseBuilder<UserBuilder> response = ResponseBuilder.build(UserBuilder.toDTO(user), HttpStatus.OK.value(), Constant.MESSAGE_SUCCESS);
 		return new ResponseEntity<ResponseBuilder<UserBuilder>>(response, HttpStatus.OK);
 	}

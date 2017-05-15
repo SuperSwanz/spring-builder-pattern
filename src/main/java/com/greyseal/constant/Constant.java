@@ -1,7 +1,5 @@
 package com.greyseal.constant;
 
 public class Constant {
-	
-	public static String MESSAGE_SUCCESS = "Success";
-
+	public final static String MESSAGE_SUCCESS = "Success";
 }
