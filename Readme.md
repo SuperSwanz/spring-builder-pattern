@@ -15,11 +15,11 @@ For runnning this, you will need
 ## Brief
 
 Builder pattern is used here to send and receive the Json. Jackson is used for serialization/deserialization.
--- ** UserBuilder **      -> Receives the json from the UI/api and converts that to the object.
--- ** ErrorBuilder **     -> Builds Error object if there is any server side error.
--- ** ResponseBuilder **  -> Wraps the response to be send back as a generic response for all methods.
--- ** GreyResponseEntityExceptionHandler ** -> This extends ** ResponseEntityExceptionHandler ** to throw error/s from Spring controllers. This shows the good way to handle errors in Spring controller.
--- ** GreyErrorController ** -> This implements ** ErrorController ** which is used to override Spring's default error implementation which throws "Whitelabel error page". The implementaion will return Json in our case.
+--UserBuilder      -> Receives the json from the UI/api and converts that to the object.
+--ErrorBuilder     -> Builds Error object if there is any server side error.
+--ResponseBuilder  -> Wraps the response to be send back as a generic response for all methods.
+--GreyResponseEntityExceptionHandler -> This extends ** ResponseEntityExceptionHandler ** to throw error/s from Spring controllers. This shows the good way to handle errors in Spring controller.
+--GreyErrorController -> This implements ** ErrorController ** which is used to override Spring's default error implementation which throws "Whitelabel error page". The implementaion will return Json in our case.
 
 ## Running the app
 
