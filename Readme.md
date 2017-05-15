@@ -25,7 +25,7 @@ Builder pattern is used here to send and receive the Json. Jackson is used for s
 
 For running the app,
 - Open **application.properties** file and set the "Server Config", "H2 Config", "Datasource Config" as per your choice. No need to change the "Security Config" as spring security is not implemented.
-- Once, changes are done in **application.properties**, open "CommonDesignPatternsApplication.Java" file and select run/debug.
+- Once, changes are done in **application.properties**, open **"CommonDesignPatternsApplication.Java"** file and select run/debug.
 - If app starts successfull, goto **http://localhost:8080/designs**. Error json will be served as response.
 - To create user, do <br />
 *POST http://localhost:8080/designs/user/create* <br />
