@@ -12,9 +12,13 @@ For runnning this, you will need
 - Java 1.8
 - Gradle support - In Eclipse editor, goto help -> eclipse marketplace -> search for buildship (buildship gradle integration) and install it.
 
-## Running the tests
+## Running the app
 
-Explain how to run the automated tests for this system
+For running the app,
+- Open application.properties file and set the "Server Config", "H2 Config", "Datasource Config" as per your choice. No need to change the "Security Config" as spring security is not implemented.
+- Once, changes are done in application.properties, open "CommonDesignPatternsApplication.Java" file and select run/debug.
+- If app starts successfull, goto ** http://localhost:8080/designs **. Error json will be served as response.
+
 
 ## Built With
 
