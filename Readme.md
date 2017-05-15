@@ -20,7 +20,3 @@ Explain how to run the automated tests for this system
 
 * [Spring Boot](https://projects.spring.io/spring-boot/) - The web framework used
 * [Gradle](https://gradle.org/) - Dependency Management
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
